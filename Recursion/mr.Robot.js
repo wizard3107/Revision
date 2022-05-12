@@ -1,8 +1,14 @@
-const encryption  = (arr,n)=>{
+const encryption  = (arr,n,l,h)=>{
     
-    if()
+    if(l>h)
     {
-        
+        return "";
+    }
+    else
+    {
+        let mid = l+Math.floor((h-l)/2);
+        //console.log(arr[mid])
+        return arr[mid]+encryption(arr,n,l,mid-1)+encryption(arr,n,mid+1,h);
     }
 }
 function runProgram(input) {
@@ -13,8 +19,8 @@ let  l = 1 ;
  for(let i = 0; i<t;i++)
  {
      let  n = +input[l++].trim()
-     let arr = +input[l++].trim().split("");
-     encryption(arr,n,0,n-1)
+     let arr = input[l++].trim().split("");
+    console.log(encryption(arr,n,0,n-1));
  }
 }
 if (process.env.USERNAME === "Ashish Singh") {
@@ -65,4 +71,8 @@ Constraints :
 
 
 Output
-N lines where each line will contain the encrypted words */
+N lines where each line will contain the encrypted words 
+bac
+bacd
+fcabdeighjk
+*/
