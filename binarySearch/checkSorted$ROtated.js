@@ -17,7 +17,7 @@ const minimum = (n, arr, l, h) => {
 checkSorted=(arr,l,h)=>{
     
     for (let i = l+1; i <= h; i++) {
-        console.log(arr[i],arr[i-1])
+       // console.log(arr[i],arr[i-1])
         if (arr[i] < arr[i - 1]) {
             return false;
         }
@@ -30,7 +30,7 @@ function runProgram(input) {
     let n = input[0].trim()
     let arr = input[1].trim().split(" ").map(Number);
     let min =  minimum(n,arr,0,n);
-    console.log(min)
+   // console.log(min)
     if(checkSorted(arr,0,min-1)&&checkSorted(arr,min,n-1))
     {
         console.log("YES")
